@@ -1,0 +1,83 @@
+diff -urN liveice.org/Makefile.in liveice/Makefile.in
+--- liveice.org/Makefile.in	Mon Sep  4 22:02:01 2000
++++ liveice/Makefile.in	Mon Sep  4 22:02:10 2000
+@@ -79,9 +79,9 @@
+ 	$(CC) -DMODULE -D__KERNEL__ -DLINUX -O2 -c livepipe.c
+ 
+ installdirs:
+-	@ $(srcdir)/mkdirs $(DESTDIR)$(bindir)
+-	@ $(srcdir)/mkdirs $(DESTDIR)$(etcdir)
+-	@ $(srcdir)/mkdirs $(DESTDIR)$(logdir)
++	@ mkdir -p $(DESTDIR)$(bindir)
++	@ mkdir -p $(DESTDIR)$(etcdir)
++	@ mkdir -p $(DESTDIR)$(logdir)
+ 
+ install: installdirs liveice
+ 	@ $(INSTALL_PROGRAM) $(srcdir)/liveice  $(DESTDIR)$(bindir)/liveice
+diff -urN liveice.org/acconfig.h liveice/acconfig.h
+--- liveice.org/acconfig.h	Thu Jan  1 01:00:00 1970
++++ liveice/acconfig.h	Mon Sep  4 22:02:10 2000
+@@ -0,0 +1,2 @@
++#undef ETCDIR
++#undef LOGDIR
+diff -urN liveice.org/configure.in liveice/configure.in
+--- liveice.org/configure.in	Mon Sep  4 22:02:01 2000
++++ liveice/configure.in	Mon Sep  4 22:47:11 2000
+@@ -12,12 +12,12 @@
+         echo "FSSTD ENABLED"
+         BINDIR="/usr/bin"
+         ETCDIR="/etc/icecast"
+-        LOGDIR="/var/log/icecast"
++        LOGDIR="/var/log/icecast/"
+ else
+         echo "FSSTD DISABLED"
+         BINDIR="${prefix}/icecast/bin"
+         ETCDIR="${prefix}/icecast/etc"
+-        LOGDIR="${prefix}/icecast/log"
++        LOGDIR="${prefix}/icecast/log/"
+ fi
+ AC_SUBST(BINDIR)
+ AC_SUBST(ETCDIR)
+@@ -38,7 +38,10 @@
+ AC_CHECK_LIB(m,sqrt)
+ 
+ dnl Replace `main' with a function in -lresolv:
+-AC_CHECK_LIB(curses, refresh)
++dnl We don't want ncurses because this part of code
++dnl is totally broken in liveice -- belive me.
++dnl CFLAGS="$CFLAGS -I/usr/include/ncurses"
++dnl AC_CHECK_LIB(ncurses, refresh)
+ 
+ 
+ dnl Checks for header files.
+diff -urN liveice.org/liveice.cfg liveice/liveice.cfg
+--- liveice.org/liveice.cfg	Mon Sep  4 22:02:01 2000
++++ liveice/liveice.cfg	Mon Sep  4 22:02:49 2000
+@@ -33,7 +33,7 @@
+ #
+ # If you're having problems - specify the full path to the encoder
+ 
+-USE_LAME3 /usr/local/bin/lame3.82_fast
++USE_LAME3 /usr/bin/lame
+ 
+ #
+ # You can manually set other command line options using this
+@@ -116,9 +116,6 @@
+ # URL                           -u
+ URL http://star.arm.ac.uk/~spm/software/liveice.html
+ 
+-#password                       -P
+-PASSWORD szyzyg
+-
+ #description - only valid in x-audiocast systems
+ DESCRIPTION Live From His Cube, Scott is mixing up selected cuts - see him on #icecast
+ 
+@@ -143,7 +140,7 @@
+ PLAYLIST playlist
+ 
+ # if you want to decode mp3 you need a version of mpg123 lying around.
+-DECODER_COMMAND mpg123
++DECODER_COMMAND /usr/bin/mpg123
+ 
+ #
+ # Stream recording
