@@ -33,7 +33,7 @@ u¿ywaæ liveice z mikrofonem by tworzyæ i nadawaæ audycje audio.
 %patch0 -p1
 
 %build
-autoheader
+%{__autoheader}
 %{__autoconf}
 %configure \
 	-enable-fsstd
