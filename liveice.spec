@@ -34,7 +34,7 @@ u¿ywaæ liveice z mikrofonem by tworzyæ i nadawaæ audycje audio.
 
 %build
 autoheader
-autoconf
+%{__autoconf}
 %configure \
 	-enable-fsstd
 
