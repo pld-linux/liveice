@@ -15,17 +15,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 LiveIce is a live streaming program that allows input either from your
-soundcard's line in or from mp3 files to be mixed and re-encoded and
+soundcard's line in or from MP3 files to be mixed and re-encoded and
 then streamed to an icecast server. This means that you can use
 liveice with your microphone and do live audio broadcasts, or even use
-a mp3 playlist and use the multi channel support to speed up, slow
+a MP3 playlist and use the multi channel support to speed up, slow
 down, adjust volumes, and mix between the two channels, and then
 re-encode the data at a lower bitrate to be sent out to a icecast
 server.
 
 %description -l pl
 LiveIce to program do streamingu na ¿ywo, który pozwala miksowaæ
-sygna³y audio z karty d¼wiêkowej, plików mp3. Przetworzony strumieñ
+sygna³y audio z karty d¼wiêkowej, plików MP3. Przetworzony strumieñ
 danych jest przesy³any do serwera icecast. To oznacza, ¿e mo¿esz
 u¿ywaæ liveice z mikrofonem by tworzyæ i nadawaæ audycje audio.
 
