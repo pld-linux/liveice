@@ -7,6 +7,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://star.arm.ac.uk/~spm/software/%{name}.tar.gz
+# Source0-md5:	6b1c9c98225757c26f91083b233da0ff
 Patch0:		%{name}-conf.patch
 URL:		http://star.arm.ac.uk/~spm/software/liveice.html
 BuildRequires:	autoconf
