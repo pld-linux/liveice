@@ -1,4 +1,4 @@
-Summary:	live audio streaming program
+Summary:	Live audio streaming program
 Summary(pl):	Program do streamingu audio na ¿ywo
 Name:		liveice
 #		Set Date as Version
