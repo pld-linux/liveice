@@ -1,15 +1,17 @@
 Summary:	live audio streaming program
-Summary(pl):	Program do streamingu audio na ¿ywo.
+Summary(pl):	Program do streamingu audio na ¿ywo
 Name:		liveice
 #		Set Date as Version
 Version:	000530
 Release:	1
 License:	GPL
 Group:		Applications/Sound
+Group(de):	Applikationen/Laut
 Group(pl):	Aplikacje/D¼wiêk
 Source0:	http://star.arm.ac.uk/~spm/software/%{name}.tar.gz
 Patch0:		%{name}-conf.patch
 URL:		http://star.arm.ac.uk/~spm/software/liveice.html
+BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
