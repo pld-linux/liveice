@@ -55,4 +55,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(750,root,root) %dir %{_sysconfdir}/icecast
 %dir %{_var}/log/icecast
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/icecast/%{name}.cfg
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/icecast/%{name}.cfg
