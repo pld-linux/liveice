@@ -1,5 +1,5 @@
 Summary:	Live audio streaming program
-Summary(pl):	Program do streamingu audio na ¿ywo
+Summary(pl.UTF-8):   Program do streamingu audio na Å¼ywo
 Name:		liveice
 #		Set Date as Version
 Version:	000530
@@ -23,11 +23,11 @@ down, adjust volumes, and mix between the two channels, and then
 re-encode the data at a lower bitrate to be sent out to a icecast
 server.
 
-%description -l pl
-LiveIce to program do streamingu na ¿ywo, który pozwala miksowaæ
-sygna³y audio z karty d¼wiêkowej, plików MP3. Przetworzony strumieñ
-danych jest przesy³any do serwera icecast. To oznacza, ¿e mo¿esz
-u¿ywaæ liveice z mikrofonem by tworzyæ i nadawaæ audycje audio.
+%description -l pl.UTF-8
+LiveIce to program do streamingu na Å¼ywo, ktÃ³ry pozwala miksowaÄ‡
+sygnaÅ‚y audio z karty dÅºwiÄ™kowej, plikÃ³w MP3. Przetworzony strumieÅ„
+danych jest przesyÅ‚any do serwera icecast. To oznacza, Å¼e moÅ¼esz
+uÅ¼ywaÄ‡ liveice z mikrofonem by tworzyÄ‡ i nadawaÄ‡ audycje audio.
 
 %prep
 %setup -q -n %{name}
