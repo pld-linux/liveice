@@ -1,5 +1,5 @@
 Summary:	Live audio streaming program
-Summary(pl.UTF-8):   Program do streamingu audio na żywo
+Summary(pl.UTF-8):	Program do streamingu audio na żywo
 Name:		liveice
 #		Set Date as Version
 Version:	000530
